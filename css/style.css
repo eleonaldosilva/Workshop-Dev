@@ -1,7 +1,21 @@
 body {
     background-color: #e5e5e5;
     color: #24282b;
-    text-align: center;
+    
+    margin: 0;
+}
+
+#container{
+    width: 90%;
+    max-width: 980px;
+    margin: 0 auto;
+    display: flex;
+}
+
+#intro{
+    width: 300px;
+    margin-right: 20px;
+    
 }
 
 button {
@@ -11,12 +25,21 @@ button {
     color: #ff5e84;
 }
 
-.fat {
+button.fat {
     color: #ffffff;
     background: #ff5e84;
 }
+#button{
+    display: flex;
+    margin-bottom: 30px;
+    justify-content: space-evenly;
+}
 
-#footer a {
+footer{
+    text-align: center;
+}
+
+footer a {
     color: #24282b;
     text-decoration: none;
 }

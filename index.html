@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <title>Casa Criativa</title>
@@ -14,7 +14,9 @@
         <section id="intro">
 
             <header>
-                <img src="logo.png" alt="Logo da Casa Criativa">
+                <a href="index.html">
+                    <img src="image/logo.png" alt="Logo da Casa Criativa">
+                </a>
             </header>
 
             <main>
@@ -31,17 +33,17 @@
             </main>
 
             <section id="button">
-                <button>+ Adicionar Ideia</button>
-                <button class="fat">Ver Ideias</button>
+                <button onclick="onOff()">+ Adicionar Ideia</button>
+                <a href="idea.html" class="button">Ver Ideias</a>
             </section>
         
             <footer>
-                Com ❤ <a href="http://rocketseat.com.br">RocketSeat</a>
+                Com ❤ <a href="http://rocketseat.com.br" target="_blank">RocketSeat</a>
             </footer>
         
         </section>
 
-        <section id="last-idieas">
+        <section id="last-ideas">
 
             <div class="idea">
                 <img src="https://image.flaticon.com/icons/svg/2729/2729007.svg" 
@@ -85,11 +87,36 @@
         </section>
 
     </div>
-
-    <div id="modal">
+    <!--modal-->
+    <div id="modal" class="hide">
         <div class="content">
             <h1>Nova Ideia</h1>
-            <form action=""></form>
+            <form action="">
+                <div class="input-wrapper">
+                    <label for="title">Título da ideia</label>
+                    <input type="text" name="title" >
+                </div>
+                <div class="input-wrapper">
+                    <label for="category">Categoria</label>
+                    <input type="text" name="category" >
+                </div>
+                <div class="input-wrapper">
+                    <label for="image">Link da imagem</label>
+                    <input type="url" name="image" >
+                </div>
+                <div class="input-wrapper">
+                    <label for="description">Digite uma descrição para essa ideia</label>
+                    <textarea name="description" cols="30" rows="10"></textarea>
+                </div>
+                <div class="input-wrapper">
+                    <label for="link">Link da ideia</label>
+                    <input type="url" name="link" >
+                </div>
+                <a href="#" onclick="onOff()">Voltar</a>
+                <button>Salvar</button>
+
+            </form>
+            
         </div>
     </div>
 

@@ -1,34 +1,75 @@
 body {
     background-color: #e5e5e5;
     color: #24282b;
-    
     margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.hide {
+    display: none;
+}
+
+a{
+    color: #ff5e84;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+p, .description{
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.1px;
 }
 
 #container{
     width: 90%;
     max-width: 980px;
-    margin: 0 auto;
+    margin: 40px auto;
     display: flex;
 }
 
 #intro{
     width: 300px;
     margin-right: 20px;
-    
+}
+
+main{
+    margin: 32px 0;
 }
 
 button {
     border: none;
     font-weight: bold;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.2px;
     background: none;
     color: #ff5e84;
+    cursor: pointer;
+    outline: none;
+}
+
+button:hover{
+    text-decoration: underline;
 }
 
 button.fat {
     color: #ffffff;
     background: #ff5e84;
+    width: 150px;
+    height: 40px;
+    border-radius: 6px;
+    box-shadow: 0px 8px 16px #ff5e8432;
 }
+
+button.fat:hover{
+    text-decoration: none;
+}
+
 #button{
     display: flex;
     margin-bottom: 30px;
@@ -37,13 +78,42 @@ button.fat {
 
 footer{
     text-align: center;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.2px;
+    color: #777777;
 }
 
 footer a {
-    color: #24282b;
-    text-decoration: none;
+    opacity: 0.7;
 }
 
-.hide {
-    display: none;
+.idea{
+    display: flex;
+    background-color: #ffffff;
+    box-shadow: 0 4px 16px -8px rgba(1, 1, 1, 0.1);
+    border-radius: 8px;
+    padding: 32px;
+    margin-bottom: 32px;
+}
+
+.idea img{
+    width: 60px;
+    height: 60px;
+    margin-right: 32px;
+
+}
+
+.idea h3{
+    margin: 0;
+}
+
+.idea p{
+    margin: 8px 0;
+    color: #777777;
+}
+
+.idea description {
+    margin: 16px 0;
 }

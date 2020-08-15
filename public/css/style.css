@@ -148,7 +148,7 @@ footer a {
 }
 
 #modal .content{
-    margin-top: 8%;
+    margin-top: 5%;
     color:#ffffff;
 }
 
@@ -160,7 +160,7 @@ footer a {
 #modal form{
     width: 80%;
     max-width: 800px;
-    margin: 0 auto 8%;
+    margin: 0 auto 15%;
     display: grid;
     grid-template-columns: 1fr 1fr;
      gap: 20px;

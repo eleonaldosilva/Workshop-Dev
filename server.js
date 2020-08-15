@@ -10,5 +10,9 @@ server.get("/", function(req, res){
   return res.sendFile(__dirname + "/index.html")
 })
 
+server.get("/idea", function(req, res){
+  return res.sendFile(__dirname + "/idea.html")
+})
+
 // usando a porta 3000 para o meu servidor
 server.listen(3000)

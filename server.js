@@ -2,6 +2,37 @@
 const express = require("express")
 const server = express()
 
+const ideas = [
+  {
+    img:"https://image.flaticon.com/icons/svg/2729/2729007.svg",
+    title:"cursos de programação",
+    category:"Estudo",
+    description:"Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    url:"https://rocketseat.com.br"
+  },
+  {
+    img:"https://image.flaticon.com/icons/svg/2729/2729005.svg",
+    title:"Exercícios",
+    category:"saúde",
+    description:"Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    url:"https://rocketseat.com.br"
+  },
+  {
+    img:"https://image.flaticon.com/icons/svg/2729/2729027.svg",
+    title:"Meditação",
+    category:"Mentalidade",
+    description:"Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    url:"https://rocketseat.com.br"
+  },
+  {
+    img:"https://image.flaticon.com/icons/svg/2729/2729032.svg",
+    title:"Karaoke",
+    category:"Diversão em Familia",
+    description:"Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    url:"https://rocketseat.com.br"
+  }
+]
+
 // configurando arquivos estaticos (css, scripts, imagens)
 server.use(express.static("public"))
 
@@ -9,16 +40,30 @@ server.use(express.static("public"))
 
 const nunjucks = require("nunjucks")
 nunjucks.configure("view",{
-  express:server
+  express:server,
+  noCache:true,
 })
 
 // criei uma rota / e capturo o pedido do cliente  para responder
 server.get("/", function(req, res){
-  return res.render("index.html")
+
+  const reverseIdeas= [...ideas].reverse()
+
+  let lastIdeas=[ ]
+  for(let idea of reverseIdeas){
+    if(lastIdeas.length < 2){
+      lastIdeas.push(idea)
+    }
+  }
+
+  return res.render("index.html", {ideas : lastIdeas})
 })
 
 server.get("/idea", function(req, res){
-  return res.render( "idea.html")
+
+  const reverseIdeas= [...ideas].reverse()
+
+  return res.render( "idea.html", { ideas : reverseIdeas})
 })
 
 // usando a porta 3000 para o meu servidor

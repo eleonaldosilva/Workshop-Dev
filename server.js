@@ -47,7 +47,7 @@ nunjucks.configure("view",{
 // criei uma rota / e capturo o pedido do cliente  para responder
 server.get("/", function(req, res){
 
-  const reverseIdeas= [...ideas].reverse()
+  const reverseIdeas= [...ideas].reverse();
 
   let lastIdeas=[ ];
   for(let idea of reverseIdeas){

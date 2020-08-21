@@ -1,6 +1,6 @@
 // usei o express para criar e configurar o meu servidor 
-const express = require("express")
-const server = express()
+const express = require("express");
+const server = express();
 
 const ideas = [
   {
@@ -31,40 +31,40 @@ const ideas = [
     description:"Lorem ipsum dolor sit amet consectetur adipisicing elit.",
     url:"https://rocketseat.com.br"
   }
-]
+];
 
 // configurando arquivos estaticos (css, scripts, imagens)
-server.use(express.static("public"))
+server.use(express.static("public"));
 
 // configurando o nunjucks
 
-const nunjucks = require("nunjucks")
+const nunjucks = require("nunjucks");
 nunjucks.configure("view",{
   express:server,
   noCache:true,
-})
+});
 
 // criei uma rota / e capturo o pedido do cliente  para responder
 server.get("/", function(req, res){
 
   const reverseIdeas= [...ideas].reverse()
 
-  let lastIdeas=[ ]
+  let lastIdeas=[ ];
   for(let idea of reverseIdeas){
     if(lastIdeas.length < 2){
-      lastIdeas.push(idea)
-    }
-  }
+      lastIdeas.push(idea);
+    };
+  };
 
-  return res.render("index.html", {ideas : lastIdeas})
-})
+  return res.render("index.html", {ideas : lastIdeas});
+});
 
 server.get("/idea", function(req, res){
 
-  const reverseIdeas= [...ideas].reverse()
+  const reverseIdeas= [...ideas].reverse();
 
-  return res.render( "idea.html", { ideas : reverseIdeas})
-})
+  return res.render( "idea.html", { ideas : reverseIdeas});
+});
 
 // usando a porta 3000 para o meu servidor
-server.listen(3000)
+server.listen(3000);

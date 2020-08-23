@@ -20,6 +20,7 @@
   "homepage": "https://github.com/eleonaldosilva/Workshop-Dev#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "nodejs": "0.0.0",
     "nodemon": "^2.0.4",
     "nunjucks": "^3.2.2",
     "sqlite3": "^5.0.0"

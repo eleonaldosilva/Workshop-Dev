@@ -77,5 +77,9 @@ server.post("/", function(req, res){
   
 });
 
+server.get("/model", function(req,res){
+  
+  console.log(req.body.button)
+})
 // usando a porta 3000 para o meu servidor
 server.listen(3000);

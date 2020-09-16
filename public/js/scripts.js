@@ -4,10 +4,10 @@ function onOff() {
     document.querySelector("#modal").classList.toggle("addScroll");
 };
 
- function checkFields(event){
+ function checkField(event){
 
     const valuesToCheck = [
-        "tittle",
+        "title",
         "category",
         "image",
         "description",

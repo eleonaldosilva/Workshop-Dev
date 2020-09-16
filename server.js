@@ -4,33 +4,9 @@ const server = express();
 const db = require("./db.js") 
 
 
-// const ideas = [
-  
-//   {
-//     img:"https://image.flaticon.com/icons/svg/2729/2729005.svg",
-//     title:"Exercícios",
-//     category:"saúde",
-//     description:"Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-//     url:"https://rocketseat.com.br"
-//   },
-//   {
-//     img:"https://image.flaticon.com/icons/svg/2729/2729027.svg",
-//     title:"Meditação",
-//     category:"Mentalidade",
-//     description:"Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-//     url:"https://rocketseat.com.br"
-//   },
-//   {
-//     img:"https://image.flaticon.com/icons/svg/2729/2729032.svg",
-//     title:"Karaoke",
-//     category:"Diversão em Familia",
-//     description:"Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-//     url:"https://rocketseat.com.br"
-//   }
-// ];
-
 // configurando arquivos estaticos (css, scripts, imagens)
 server.use(express.static("public"));
+server.use(express.urlencoded({ extended:true }))
 
 // configurando o nunjucks
 
@@ -70,6 +46,35 @@ server.get("/idea", function(req, res){
     return res.render( "idea.html", { ideas : reverseIdeas});
   })
 
+});
+
+server.post("/", function(req, res){
+  const query=`
+   INSERT INTO ideas(
+     image,
+     title,
+     category,
+     description,
+     url
+   ) VALUES(?,?,?,?,?); `;
+
+  const values = [
+    req.body.image,
+    req.body.tittle,
+    req.body.category,
+    req.body.description,
+    req.body.url,
+
+  ];
+
+  db.run(query,values, function(err){
+    if (err){
+      console.log(err);
+      return res.send("Erro no Banco de Dados");
+    };
+    return res.redirect("/idea")
+  });
+  
 });
 
 // usando a porta 3000 para o meu servidor
